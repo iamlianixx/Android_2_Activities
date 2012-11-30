@@ -14,22 +14,19 @@ public class ContactAdapter extends ArrayAdapter<Contact>{
 	
 	private final Context context;
 	private final Contact[] values;
-		public ContactAdapter(Context context, MemeClass[] values){
-			super(context, R.layout.activity_main,values);
+	private final char type;
+		public ContactAdapter(Context context, Contact[] values, char type){
+			super(context, R.layout.item_list,values);
 			this.context = context;
-			this.values = values;	
+			this.values = values;
+			this.type = type;
 		}
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			// TODO Auto-generated method stub
 			LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			View rowView = inflater.inflate(R.layout.activity_main, parent, false);
-			TextView tvName = (TextView) rowView.findViewById(R.id.tvNameLabel);
-			TextView tvDesc = (TextView) rowView.findViewById(R.id.tvDescLabel);
-			ImageView img = (ImageView) rowView.findViewById(R.id.image);			
-			tvName.setText(values[position].getMemeName());
-			tvDesc.setText(values[position].getMemeUrl());
-			img.setImageResource(values[position].getMemeImage());
+			View rowView = inflater.inflate(R.layout.item_list, parent, false);
+			
 			return rowView;
 			//super.getView(position, convertView, parent);
 		}
