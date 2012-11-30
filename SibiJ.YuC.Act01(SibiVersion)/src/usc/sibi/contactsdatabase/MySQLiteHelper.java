@@ -9,9 +9,9 @@ public class MySQLiteHelper extends SQLiteOpenHelper{
 	
 	public static final String TABLE_CONTACTS = "contact";
 	public static final String COLUMN_ID = "_id";
-	public static final String COLUMN_APPID = "app_id";
-	public static final String COLUMN_NAME = "name";
-	public static final String COLUMN_NUMBER = "number";
+	public static final String COLUMN_CONID = "appcon_id";
+	public static final String COLUMN_NAME = "con_name";
+	public static final String COLUMN_NUMBER = "con_number";
 	
 	private static final String DATABASE_NAME = "contacts.db";
 	private static final int DATABASE_VERSION = 1;
@@ -20,7 +20,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper{
 	private final static String DATABASE_CREATE = "create table "
 				+ TABLE_CONTACTS + "(" 
 				+ COLUMN_ID + " integer primary key autoincrement, " 
-				+ COLUMN_APPID + " text not null, "
+				+ COLUMN_CONID + " text not null, "
 				+ COLUMN_NAME + " text not null, "
 				+ COLUMN_NUMBER +  " text not null );";
 	
